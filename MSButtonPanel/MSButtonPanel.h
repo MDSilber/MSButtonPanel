@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MSButtonPanel : UIView
-
+- (instancetype)initWithButtonTitles:(NSArray *)buttonTitles;
 @end

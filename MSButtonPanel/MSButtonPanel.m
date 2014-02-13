@@ -8,24 +8,31 @@
 
 #import "MSButtonPanel.h"
 
+@interface MSButtonPanel ()
+@property (nonatomic) NSMutableArray *buttons;
+@property (nonatomic) NSInteger selectedButtonIndex;
+@end
+
 @implementation MSButtonPanel
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithButtonTitles:(NSArray *)buttonTitles
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(10, 50, 300, 50)];
     if (self) {
-        // Initialization code
+        self.buttons = [NSMutableArray array];
+        self.selectedButtonIndex = 0;
+        for (NSString *buttonTitle in buttonTitles) {
+            UIButton *newButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [newButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [self.buttons addObject:newButton];
+        }
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)buttonPressed:(id)sender
 {
-    // Drawing code
+    self.selectedButtonIndex = [self.buttons indexOfObject:sender];
 }
-*/
 
 @end
