@@ -453,6 +453,7 @@
 				28853B5118AAFEBC000505A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28853B5218AAFEBC000505A1 /* Build configuration list for PBXNativeTarget "MSButtonPanelTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +462,7 @@
 				28853B5418AAFEBC000505A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

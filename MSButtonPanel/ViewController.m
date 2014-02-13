@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MSButtonPanel.h"
 
 @interface ViewController ()
 
@@ -28,6 +29,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
+    MSButtonPanel *buttonPanel = [[MSButtonPanel alloc] initWithButtonTitles:@[@"Test", @"Test", @"Test", @"Test", @"Test"]];
+    [self.view addSubview:buttonPanel];
 }
 
 - (void)didReceiveMemoryWarning
