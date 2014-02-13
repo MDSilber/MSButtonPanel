@@ -61,8 +61,10 @@
     [self.buttons addObject:button];
 
     if (selected) {
+        [button setTitle:[NSString stringWithFormat:@"%d. %@", (index + 1), [self.buttonTitles objectAtIndex:index]] forState:UIControlStateNormal];
         [self _selectButton:button];
     } else {
+        [button setTitle:[NSString stringWithFormat:@"%d", (index + 1)] forState:UIControlStateNormal];
         [self _deselectButton:button];
     }
 
@@ -71,11 +73,19 @@
 
 - (void)_buttonPressed:(UIButton *)sender
 {
-    if (self.selectedButtonIndex < [self.buttons indexOfObject:sender]) {
+    NSInteger newSelectedButtonIndex = [self.buttons indexOfObject:sender];
+    if (self.selectedButtonIndex == newSelectedButtonIndex) {
+        return;
+    }
+
+    UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
+    [oldSelectedButton setTitle:[NSString stringWithFormat:@"%d", (self.selectedButtonIndex + 1)] forState:UIControlStateNormal];
+    [sender setTitle:[NSString stringWithFormat:@"%d. %@", (newSelectedButtonIndex + 1), [self.buttonTitles objectAtIndex:newSelectedButtonIndex]] forState:UIControlStateNormal];
+
+    if (self.selectedButtonIndex < newSelectedButtonIndex) {
         //Button tapped is to the right of the currently selected button
         [UIView animateWithDuration:0.25f animations:^{
             //Deselect old button
-            UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
             CGRect oldSelectedButtonFrame = oldSelectedButton.frame;
             oldSelectedButtonFrame.size.width = self.normalButtonWidth;
             oldSelectedButton.frame = oldSelectedButtonFrame;
@@ -89,14 +99,14 @@
             [self _selectButton:sender];
 
             //Adjust position of buttons between the two
-            for (int i = self.selectedButtonIndex + 1; i < [self.buttons indexOfObject:sender]; i++) {
+            for (int i = self.selectedButtonIndex + 1; i < newSelectedButtonIndex; i++) {
                 UIButton *button = (UIButton *)[self.buttons objectAtIndex:i];
                 CGRect buttonFrame = button.frame;
                 buttonFrame.origin.x -= [self _widthDifference];
                 button.frame = buttonFrame;
             }
         }];
-    } else if (self.selectedButtonIndex > [self.buttons indexOfObject:sender]) {
+    } else if (self.selectedButtonIndex > newSelectedButtonIndex) {
         //Button tapped is to the left of the currently selected button
         [UIView animateWithDuration:0.25f animations:^{
             //Deselect old button
@@ -114,31 +124,26 @@
             [self _selectButton:sender];
 
             //Adjust position of buttons between the two
-            for (int i = [self.buttons indexOfObject:sender] + 1; i < self.selectedButtonIndex; i++) {
+            for (int i = newSelectedButtonIndex + 1; i < self.selectedButtonIndex; i++) {
                 UIButton *button = (UIButton *)[self.buttons objectAtIndex:i];
                 CGRect buttonFrame = button.frame;
                 buttonFrame.origin.x += [self _widthDifference];
                 button.frame = buttonFrame;
             }
         }];
-    } else {
-        return;
     }
-    self.selectedButtonIndex = [self.buttons indexOfObject:sender];
+    self.selectedButtonIndex = newSelectedButtonIndex;
 }
 
 - (void)_selectButton:(UIButton *)button
 {
-    NSInteger buttonIndex = [self.buttons indexOfObject:button];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitle:[NSString stringWithFormat:@"%d. %@", (buttonIndex + 1), [self.buttonTitles objectAtIndex:buttonIndex]] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)_deselectButton:(UIButton *)button
 {
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitle:[NSString stringWithFormat:@"%d", ([self.buttons indexOfObject:button] + 1)] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor blackColor];
 }
 
