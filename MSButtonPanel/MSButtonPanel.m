@@ -8,6 +8,14 @@
 
 #import "MSButtonPanel.h"
 
+#define GAP_BETWEEN_BUTTONS 10.0f
+#define BUTTON_PANEL_ORIGIN_X 0.0f
+#define BUTTON_PANEL_WIDTH 320
+#define BUTTON_PANEL_HEIGHT 50
+#define DEFAULT_FONT_SIZE 14.0f
+#define BUTTON_CORNER_RADIUS 3.0f
+#define ANIMATION_DURATION 0.25f
+
 @interface MSButtonPanel ()
 @property (nonatomic) CGFloat normalButtonWidth;
 @property (nonatomic) CGFloat selectedButtonWidth;
@@ -20,7 +28,7 @@
 
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles
 {
-    self = [super initWithFrame:CGRectMake(0, 50, 320, 50)];
+    self = [super initWithFrame:CGRectMake(BUTTON_PANEL_ORIGIN_X, 50.0f, BUTTON_PANEL_WIDTH, BUTTON_PANEL_HEIGHT)];
     if (self) {
         self.buttons = [NSMutableArray array];
         self.selectedButtonIndex = 0;
@@ -29,8 +37,8 @@
         _selectedTextColor = [UIColor blackColor];
         _unselectedBackgroundColor = [UIColor blackColor];
         _unselectedTextColor = [UIColor whiteColor];
-        _selectedFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
-        _unselectedFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
+        _selectedFont = [UIFont fontWithName:@"HelveticaNeue" size:DEFAULT_FONT_SIZE];
+        _unselectedFont = [UIFont fontWithName:@"HelveticaNeue" size:DEFAULT_FONT_SIZE];
         for (int i = 0; i < [buttonTitles count]; i++) {
             UIButton *newButton = [self _buttonWithIndex:i isSelected:(i == self.selectedButtonIndex)];
             [self addSubview:newButton];
@@ -120,7 +128,7 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:@selector(_buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    button.layer.cornerRadius = 3.0f;
+    button.layer.cornerRadius = BUTTON_CORNER_RADIUS;
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.buttons addObject:button];
@@ -149,7 +157,7 @@
 
     if (self.selectedButtonIndex < newSelectedButtonIndex) {
         //Button tapped is to the right of the currently selected button
-        [UIView animateWithDuration:0.25f animations:^{
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^{
             //Deselect old button
             CGRect oldSelectedButtonFrame = oldSelectedButton.frame;
             oldSelectedButtonFrame.size.width = self.normalButtonWidth;
@@ -173,7 +181,7 @@
         }];
     } else if (self.selectedButtonIndex > newSelectedButtonIndex) {
         //Button tapped is to the left of the currently selected button
-        [UIView animateWithDuration:0.25f animations:^{
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^{
             //Deselect old button
             UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
             CGRect oldSelectedButtonFrame = oldSelectedButton.frame;
@@ -222,7 +230,7 @@
 - (void)_calculateButtonWidths
 {
     //Subtraction accounts for gaps between buttons
-    CGFloat availableWidth = 320.0f - 10.0f * ([self.buttonTitles count] + 1);
+    CGFloat availableWidth = BUTTON_PANEL_WIDTH - GAP_BETWEEN_BUTTONS * ([self.buttonTitles count] + 1);
     self.selectedButtonWidth = floorf(availableWidth/2.0f);
     self.normalButtonWidth = floorf(availableWidth/(2.0f * ([self.buttonTitles count] - 1)));
 }
