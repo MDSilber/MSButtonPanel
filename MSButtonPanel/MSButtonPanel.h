@@ -14,6 +14,8 @@
 @property (nonatomic) UIColor *unselectedBackgroundColor;
 @property (nonatomic) UIColor *selectedTextColor;
 @property (nonatomic) UIColor *unselectedTextColor;
+@property (nonatomic) UIFont *selectedFont;
+@property (nonatomic) UIFont *unselectedFont;
 
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles;
 

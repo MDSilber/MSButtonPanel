@@ -29,6 +29,8 @@
         _selectedTextColor = [UIColor blackColor];
         _unselectedBackgroundColor = [UIColor blackColor];
         _unselectedTextColor = [UIColor whiteColor];
+        _selectedFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
+        _unselectedFont = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
         for (int i = 0; i < [buttonTitles count]; i++) {
             UIButton *newButton = [self _buttonWithIndex:i isSelected:(i == self.selectedButtonIndex)];
             [self addSubview:newButton];
@@ -94,13 +96,32 @@
     }
 }
 
+- (void)setSelectedFont:(UIFont *)selectedFont
+{
+    if (_selectedFont != selectedFont) {
+        _selectedFont = selectedFont;
+        ((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]).titleLabel.font = _selectedFont;
+    }
+}
+
+- (void)setUnselectedFont:(UIFont *)unselectedFont
+{
+    if (_unselectedFont != unselectedFont) {
+        _unselectedFont = unselectedFont;
+        for (UIButton *button in self.buttons) {
+            if ([self.buttons indexOfObject:button] != self.selectedButtonIndex) {
+                button.titleLabel.font = self.unselectedFont;
+            }
+        }
+    }
+}
+
 - (UIButton *)_buttonWithIndex:(NSInteger)index isSelected:(BOOL)selected
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:@selector(_buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     button.layer.cornerRadius = 3.0f;
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
-    button.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
     button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [self.buttons addObject:button];
 
@@ -109,7 +130,7 @@
         [self _selectButton:button];
     } else {
         [button setTitle:[NSString stringWithFormat:@"%d", (index + 1)] forState:UIControlStateNormal];
-        [self _deselectButton:button];
+        [self _unselectButton:button];
     }
 
     return button;
@@ -133,7 +154,7 @@
             CGRect oldSelectedButtonFrame = oldSelectedButton.frame;
             oldSelectedButtonFrame.size.width = self.normalButtonWidth;
             oldSelectedButton.frame = oldSelectedButtonFrame;
-            [self _deselectButton:[self.buttons objectAtIndex:self.selectedButtonIndex]];
+            [self _unselectButton:[self.buttons objectAtIndex:self.selectedButtonIndex]];
 
             //Select new button
             CGRect newSelectedButtonFrame = sender.frame;
@@ -159,7 +180,7 @@
             oldSelectedButtonFrame.origin.x += [self _widthDifference];
             oldSelectedButtonFrame.size.width = self.normalButtonWidth;
             oldSelectedButton.frame = oldSelectedButtonFrame;
-            [self _deselectButton:oldSelectedButton];
+            [self _unselectButton:oldSelectedButton];
 
             //Select new button
             CGRect newSelectedButtonFrame = sender.frame;
@@ -183,12 +204,14 @@
 {
     [button setTitleColor:self.selectedTextColor forState:UIControlStateNormal];
     button.backgroundColor = self.selectedBackgroundColor;
+    button.titleLabel.font = self.selectedFont;
 }
 
-- (void)_deselectButton:(UIButton *)button
+- (void)_unselectButton:(UIButton *)button
 {
     [button setTitleColor:self.unselectedTextColor forState:UIControlStateNormal];
     button.backgroundColor = self.unselectedBackgroundColor;
+    button.titleLabel.font = self.unselectedFont;
 }
 
 - (CGFloat)_widthDifference
