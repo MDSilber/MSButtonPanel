@@ -25,6 +25,10 @@
         self.buttons = [NSMutableArray array];
         self.selectedButtonIndex = 0;
         self.buttonTitles = buttonTitles;
+        _selectedBackgroundColor = [UIColor whiteColor];
+        _selectedTextColor = [UIColor blackColor];
+        _unselectedBackgroundColor = [UIColor blackColor];
+        _unselectedTextColor = [UIColor whiteColor];
         for (int i = 0; i < [buttonTitles count]; i++) {
             UIButton *newButton = [self _buttonWithIndex:i isSelected:(i == self.selectedButtonIndex)];
             [self addSubview:newButton];
@@ -47,6 +51,46 @@
             xOrigin += 10.0f + self.normalButtonWidth;
         }
         [self addSubview:button];
+    }
+}
+
+- (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor
+{
+    if (_selectedBackgroundColor != selectedBackgroundColor) {
+        _selectedBackgroundColor = selectedBackgroundColor;
+        ((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]).backgroundColor = _selectedBackgroundColor;
+    }
+}
+
+- (void)setSelectedTextColor:(UIColor *)selectedTextColor
+{
+    if (_selectedTextColor != selectedTextColor) {
+        _selectedTextColor = selectedTextColor;
+        [((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]) setTitleColor:_selectedTextColor forState:UIControlStateNormal];
+    }
+}
+
+- (void)setUnselectedBackgroundColor:(UIColor *)unselectedBackgroundColor
+{
+    if (_unselectedBackgroundColor != unselectedBackgroundColor) {
+        _unselectedBackgroundColor = unselectedBackgroundColor;
+        for (UIButton *button in self.buttons) {
+            if ([self.buttons indexOfObject:button] != self.selectedButtonIndex) {
+                button.backgroundColor = _unselectedBackgroundColor;
+            }
+        }
+    }
+}
+
+- (void)setUnselectedTextColor:(UIColor *)unselectedTextColor
+{
+    if (_unselectedTextColor != unselectedTextColor) {
+        _unselectedTextColor = unselectedTextColor;
+        for (UIButton *button in self.buttons) {
+            if ([self.buttons indexOfObject:button] != self.selectedButtonIndex) {
+                [button setTitleColor:_unselectedTextColor forState:UIControlStateNormal];
+            }
+        }
     }
 }
 
@@ -137,14 +181,14 @@
 
 - (void)_selectButton:(UIButton *)button
 {
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor whiteColor];
+    [button setTitleColor:self.selectedTextColor forState:UIControlStateNormal];
+    button.backgroundColor = self.selectedBackgroundColor;
 }
 
 - (void)_deselectButton:(UIButton *)button
 {
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor blackColor];
+    [button setTitleColor:self.unselectedTextColor forState:UIControlStateNormal];
+    button.backgroundColor = self.unselectedBackgroundColor;
 }
 
 - (CGFloat)_widthDifference

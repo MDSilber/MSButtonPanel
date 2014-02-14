@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface MSButtonPanel : UIView
+
+@property (nonatomic) UIColor *selectedBackgroundColor;
+@property (nonatomic) UIColor *unselectedBackgroundColor;
+@property (nonatomic) UIColor *selectedTextColor;
+@property (nonatomic) UIColor *unselectedTextColor;
+
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles;
+
 @end
