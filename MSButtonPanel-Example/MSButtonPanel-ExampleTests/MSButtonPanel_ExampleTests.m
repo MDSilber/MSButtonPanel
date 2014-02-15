@@ -1,18 +1,18 @@
 //
-//  MSButtonPanelTests.m
-//  MSButtonPanelTests
+//  MSButtonPanel_ExampleTests.m
+//  MSButtonPanel-ExampleTests
 //
-//  Created by Mason Silber on 2/11/14.
-//  Copyright (c) 2014 MasonSilber. All rights reserved.
+//  Created by Mason Silber on 2/15/14.
+//  Copyright (c) 2014 Mason Silber. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface MSButtonPanelTests : XCTestCase
+@interface MSButtonPanel_ExampleTests : XCTestCase
 
 @end
 
-@implementation MSButtonPanelTests
+@implementation MSButtonPanel_ExampleTests
 
 - (void)setUp
 {

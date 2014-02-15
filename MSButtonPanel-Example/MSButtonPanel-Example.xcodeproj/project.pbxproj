@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B77CE36E18B00711000E80C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE36D18B00711000E80C8 /* Foundation.framework */; };
+		B77CE37018B00711000E80C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE36F18B00711000E80C8 /* CoreGraphics.framework */; };
+		B77CE37218B00711000E80C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE37118B00711000E80C8 /* UIKit.framework */; };
+		B77CE37818B00711000E80C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B77CE37618B00711000E80C8 /* InfoPlist.strings */; };
+		B77CE37A18B00711000E80C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE37918B00711000E80C8 /* main.m */; };
+		B77CE38018B00711000E80C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77CE37F18B00711000E80C8 /* Images.xcassets */; };
+		B77CE38718B00711000E80C8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE38618B00711000E80C8 /* XCTest.framework */; };
+		B77CE38818B00711000E80C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE36D18B00711000E80C8 /* Foundation.framework */; };
+		B77CE38918B00711000E80C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CE37118B00711000E80C8 /* UIKit.framework */; };
+		B77CE39118B00711000E80C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B77CE38F18B00711000E80C8 /* InfoPlist.strings */; };
+		B77CE39318B00711000E80C8 /* MSButtonPanel_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE39218B00711000E80C8 /* MSButtonPanel_ExampleTests.m */; };
+		B77CE39E18B00721000E80C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE39D18B00721000E80C8 /* AppDelegate.m */; };
+		B77CE3A118B00726000E80C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE3A018B00726000E80C8 /* ViewController.m */; };
+		B77CE3A418B00733000E80C8 /* MSButtonPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE3A318B00733000E80C8 /* MSButtonPanel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B77CE38A18B00711000E80C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B77CE36218B00711000E80C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B77CE36918B00711000E80C8;
+			remoteInfo = "MSButtonPanel-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B77CE36A18B00711000E80C8 /* MSButtonPanel-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSButtonPanel-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77CE36D18B00711000E80C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B77CE36F18B00711000E80C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B77CE37118B00711000E80C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B77CE37518B00711000E80C8 /* MSButtonPanel-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MSButtonPanel-Example-Info.plist"; sourceTree = "<group>"; };
+		B77CE37718B00711000E80C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B77CE37918B00711000E80C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B77CE37B18B00711000E80C8 /* MSButtonPanel-Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSButtonPanel-Example-Prefix.pch"; sourceTree = "<group>"; };
+		B77CE37F18B00711000E80C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B77CE38518B00711000E80C8 /* MSButtonPanel-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MSButtonPanel-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77CE38618B00711000E80C8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B77CE38E18B00711000E80C8 /* MSButtonPanel-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MSButtonPanel-ExampleTests-Info.plist"; sourceTree = "<group>"; };
+		B77CE39018B00711000E80C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B77CE39218B00711000E80C8 /* MSButtonPanel_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSButtonPanel_ExampleTests.m; sourceTree = "<group>"; };
+		B77CE39C18B00721000E80C8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B77CE39D18B00721000E80C8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B77CE39F18B00726000E80C8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B77CE3A018B00726000E80C8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B77CE3A218B00733000E80C8 /* MSButtonPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonPanel.h; sourceTree = "<group>"; };
+		B77CE3A318B00733000E80C8 /* MSButtonPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonPanel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B77CE36718B00711000E80C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE37018B00711000E80C8 /* CoreGraphics.framework in Frameworks */,
+				B77CE37218B00711000E80C8 /* UIKit.framework in Frameworks */,
+				B77CE36E18B00711000E80C8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B77CE38218B00711000E80C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE38718B00711000E80C8 /* XCTest.framework in Frameworks */,
+				B77CE38918B00711000E80C8 /* UIKit.framework in Frameworks */,
+				B77CE38818B00711000E80C8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B77CE36118B00711000E80C8 = {
+			isa = PBXGroup;
+			children = (
+				B77CE37318B00711000E80C8 /* MSButtonPanel-Example */,
+				B77CE38C18B00711000E80C8 /* MSButtonPanel-ExampleTests */,
+				B77CE36C18B00711000E80C8 /* Frameworks */,
+				B77CE36B18B00711000E80C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B77CE36B18B00711000E80C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE36A18B00711000E80C8 /* MSButtonPanel-Example.app */,
+				B77CE38518B00711000E80C8 /* MSButtonPanel-ExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B77CE36C18B00711000E80C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE36D18B00711000E80C8 /* Foundation.framework */,
+				B77CE36F18B00711000E80C8 /* CoreGraphics.framework */,
+				B77CE37118B00711000E80C8 /* UIKit.framework */,
+				B77CE38618B00711000E80C8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B77CE37318B00711000E80C8 /* MSButtonPanel-Example */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE39C18B00721000E80C8 /* AppDelegate.h */,
+				B77CE39D18B00721000E80C8 /* AppDelegate.m */,
+				B77CE3A218B00733000E80C8 /* MSButtonPanel.h */,
+				B77CE3A318B00733000E80C8 /* MSButtonPanel.m */,
+				B77CE39F18B00726000E80C8 /* ViewController.h */,
+				B77CE3A018B00726000E80C8 /* ViewController.m */,
+				B77CE37F18B00711000E80C8 /* Images.xcassets */,
+				B77CE37418B00711000E80C8 /* Supporting Files */,
+			);
+			path = "MSButtonPanel-Example";
+			sourceTree = "<group>";
+		};
+		B77CE37418B00711000E80C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE37518B00711000E80C8 /* MSButtonPanel-Example-Info.plist */,
+				B77CE37618B00711000E80C8 /* InfoPlist.strings */,
+				B77CE37918B00711000E80C8 /* main.m */,
+				B77CE37B18B00711000E80C8 /* MSButtonPanel-Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B77CE38C18B00711000E80C8 /* MSButtonPanel-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE39218B00711000E80C8 /* MSButtonPanel_ExampleTests.m */,
+				B77CE38D18B00711000E80C8 /* Supporting Files */,
+			);
+			path = "MSButtonPanel-ExampleTests";
+			sourceTree = "<group>";
+		};
+		B77CE38D18B00711000E80C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B77CE38E18B00711000E80C8 /* MSButtonPanel-ExampleTests-Info.plist */,
+				B77CE38F18B00711000E80C8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B77CE36918B00711000E80C8 /* MSButtonPanel-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B77CE39618B00711000E80C8 /* Build configuration list for PBXNativeTarget "MSButtonPanel-Example" */;
+			buildPhases = (
+				B77CE36618B00711000E80C8 /* Sources */,
+				B77CE36718B00711000E80C8 /* Frameworks */,
+				B77CE36818B00711000E80C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MSButtonPanel-Example";
+			productName = "MSButtonPanel-Example";
+			productReference = B77CE36A18B00711000E80C8 /* MSButtonPanel-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B77CE38418B00711000E80C8 /* MSButtonPanel-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B77CE39918B00711000E80C8 /* Build configuration list for PBXNativeTarget "MSButtonPanel-ExampleTests" */;
+			buildPhases = (
+				B77CE38118B00711000E80C8 /* Sources */,
+				B77CE38218B00711000E80C8 /* Frameworks */,
+				B77CE38318B00711000E80C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B77CE38B18B00711000E80C8 /* PBXTargetDependency */,
+			);
+			name = "MSButtonPanel-ExampleTests";
+			productName = "MSButtonPanel-ExampleTests";
+			productReference = B77CE38518B00711000E80C8 /* MSButtonPanel-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B77CE36218B00711000E80C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Mason Silber";
+				TargetAttributes = {
+					B77CE38418B00711000E80C8 = {
+						TestTargetID = B77CE36918B00711000E80C8;
+					};
+				};
+			};
+			buildConfigurationList = B77CE36518B00711000E80C8 /* Build configuration list for PBXProject "MSButtonPanel-Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B77CE36118B00711000E80C8;
+			productRefGroup = B77CE36B18B00711000E80C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B77CE36918B00711000E80C8 /* MSButtonPanel-Example */,
+				B77CE38418B00711000E80C8 /* MSButtonPanel-ExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B77CE36818B00711000E80C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE37818B00711000E80C8 /* InfoPlist.strings in Resources */,
+				B77CE38018B00711000E80C8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B77CE38318B00711000E80C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE39118B00711000E80C8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B77CE36618B00711000E80C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE3A118B00726000E80C8 /* ViewController.m in Sources */,
+				B77CE39E18B00721000E80C8 /* AppDelegate.m in Sources */,
+				B77CE3A418B00733000E80C8 /* MSButtonPanel.m in Sources */,
+				B77CE37A18B00711000E80C8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B77CE38118B00711000E80C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B77CE39318B00711000E80C8 /* MSButtonPanel_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B77CE38B18B00711000E80C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B77CE36918B00711000E80C8 /* MSButtonPanel-Example */;
+			targetProxy = B77CE38A18B00711000E80C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B77CE37618B00711000E80C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B77CE37718B00711000E80C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B77CE38F18B00711000E80C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B77CE39018B00711000E80C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B77CE39418B00711000E80C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B77CE39518B00711000E80C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B77CE39718B00711000E80C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSButtonPanel-Example/MSButtonPanel-Example-Prefix.pch";
+				INFOPLIST_FILE = "MSButtonPanel-Example/MSButtonPanel-Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B77CE39818B00711000E80C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSButtonPanel-Example/MSButtonPanel-Example-Prefix.pch";
+				INFOPLIST_FILE = "MSButtonPanel-Example/MSButtonPanel-Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B77CE39A18B00711000E80C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MSButtonPanel-Example.app/MSButtonPanel-Example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSButtonPanel-Example/MSButtonPanel-Example-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSButtonPanel-ExampleTests/MSButtonPanel-ExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B77CE39B18B00711000E80C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MSButtonPanel-Example.app/MSButtonPanel-Example";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSButtonPanel-Example/MSButtonPanel-Example-Prefix.pch";
+				INFOPLIST_FILE = "MSButtonPanel-ExampleTests/MSButtonPanel-ExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B77CE36518B00711000E80C8 /* Build configuration list for PBXProject "MSButtonPanel-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B77CE39418B00711000E80C8 /* Debug */,
+				B77CE39518B00711000E80C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B77CE39618B00711000E80C8 /* Build configuration list for PBXNativeTarget "MSButtonPanel-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B77CE39718B00711000E80C8 /* Debug */,
+				B77CE39818B00711000E80C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B77CE39918B00711000E80C8 /* Build configuration list for PBXNativeTarget "MSButtonPanel-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B77CE39A18B00711000E80C8 /* Debug */,
+				B77CE39B18B00711000E80C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B77CE36218B00711000E80C8 /* Project object */;
+}

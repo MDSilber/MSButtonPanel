@@ -1,9 +1,9 @@
 //
 //  main.m
-//  MSButtonPanel
+//  MSButtonPanel-Example
 //
-//  Created by Mason Silber on 2/11/14.
-//  Copyright (c) 2014 MasonSilber. All rights reserved.
+//  Created by Mason Silber on 2/15/14.
+//  Copyright (c) 2014 Mason Silber. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

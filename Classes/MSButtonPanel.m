@@ -10,7 +10,7 @@
 
 #define GAP_BETWEEN_BUTTONS 10.0f
 #define BUTTON_PANEL_ORIGIN_X 0.0f
-#define BUTTON_PANEL_WIDTH 320
+#define BUTTON_PANEL_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define BUTTON_PANEL_HEIGHT 50
 #define DEFAULT_FONT_SIZE 14.0f
 #define BUTTON_CORNER_RADIUS 3.0f
