@@ -20,7 +20,9 @@ Then implement the delegate method to handle selection based on the selected ind
     
 Target/selector method:
 
-    MSButtonPanel *buttonPanel = [[MSButtonPanel alloc] initWithButtonTitles:@[@"Test", @"Test", @"Test", @"Test", @"Test"] target:self andSelectors:@[[NSValue valueWithPointer:@selector(test1)], [NSValue valueWithPointer:@selector(test2)], [NSValue valueWithPointer:@selector(test3)], [NSValue valueWithPointer:@selector(test4)], [NSValue valueWithPointer:@selector(test5)]]];
+    MSButtonPanel *buttonPanel = [[MSButtonPanel alloc] initWithButtonTitles:@[@"Test", @"Test", @"Test", @"Test", @"Test"] target:self andSelectors:@[[NSValue valueWithPointer:@selector(selector1)], [NSValue valueWithPointer:@selector(selector2)], [NSValue valueWithPointer:@selector(selector3)], [NSValue valueWithPointer:@selector(selector4)], [NSValue valueWithPointer:@selector(selector5)]]];
     [self.view addSubview:buttonPanel];
     
 Note that selectors passed through an array must be passed as NSValues.
+
+An example of each of these can be found in the example project attached. If you have any questions, feel free to email me at mdsilber1@gmail.com. Good luck!
