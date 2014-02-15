@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSButtonPanel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MSButtonPanelDelegate>
 
 @end

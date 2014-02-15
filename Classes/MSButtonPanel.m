@@ -9,9 +9,7 @@
 #import "MSButtonPanel.h"
 
 #define GAP_BETWEEN_BUTTONS 10.0f
-#define BUTTON_PANEL_ORIGIN_X 0.0f
 #define BUTTON_PANEL_WIDTH [[UIScreen mainScreen] bounds].size.width
-#define BUTTON_PANEL_HEIGHT 50
 #define DEFAULT_FONT_SIZE 14.0f
 #define BUTTON_CORNER_RADIUS 3.0f
 #define ANIMATION_DURATION 0.25f
@@ -30,7 +28,7 @@
 {
     NSAssert([buttonTitles count] > 1, @"Need more than one button title");
     NSAssert([buttonTitles count] < 11, @"Too many buttons will break the panel");
-    self = [super initWithFrame:CGRectMake(BUTTON_PANEL_ORIGIN_X, 50.0f, BUTTON_PANEL_WIDTH, BUTTON_PANEL_HEIGHT)];
+    self = [super initWithFrame:CGRectZero];
     if (self) {
         self.buttons = [NSMutableArray array];
         self.selectedButtonIndex = 0;
@@ -165,7 +163,9 @@
         return;
     }
 
-    [self.delegate buttonPanelDidSelectButtonWithIndex:newSelectedButtonIndex];
+    if (self.delegate) {
+        [self.delegate buttonPanelDidSelectButtonWithIndex:newSelectedButtonIndex];
+    }
 
     UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
     [oldSelectedButton setTitle:[NSString stringWithFormat:@"%d", (self.selectedButtonIndex + 1)] forState:UIControlStateNormal];
