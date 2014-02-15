@@ -151,6 +151,8 @@
         return;
     }
 
+    [self.delegate buttonPanelDidSelectButtonWithIndex:newSelectedButtonIndex];
+
     UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
     [oldSelectedButton setTitle:[NSString stringWithFormat:@"%d", (self.selectedButtonIndex + 1)] forState:UIControlStateNormal];
     [sender setTitle:[NSString stringWithFormat:@"%d. %@", (newSelectedButtonIndex + 1), [self.buttonTitles objectAtIndex:newSelectedButtonIndex]] forState:UIControlStateNormal];

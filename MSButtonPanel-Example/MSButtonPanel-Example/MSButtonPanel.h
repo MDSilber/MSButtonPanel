@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class MSButtonPanel;
+
+@protocol MSButtonPanelDelegate <NSObject>
+- (void)buttonPanelDidSelectButtonWithIndex:(NSInteger)index;
+@end
+
 @interface MSButtonPanel : UIView
 
 @property (nonatomic) UIColor *selectedBackgroundColor;
@@ -16,6 +22,7 @@
 @property (nonatomic) UIColor *unselectedTextColor;
 @property (nonatomic) UIFont *selectedFont;
 @property (nonatomic) UIFont *unselectedFont;
+@property (nonatomic, weak) id<MSButtonPanelDelegate> delegate;
 
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles;
 
