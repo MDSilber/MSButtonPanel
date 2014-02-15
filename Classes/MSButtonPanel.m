@@ -28,6 +28,8 @@
 
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles
 {
+    NSAssert([buttonTitles count] > 1, @"Need more than one button title");
+    NSAssert([buttonTitles count] < 11, @"Too many buttons will break the panel");
     self = [super initWithFrame:CGRectMake(BUTTON_PANEL_ORIGIN_X, 50.0f, BUTTON_PANEL_WIDTH, BUTTON_PANEL_HEIGHT)];
     if (self) {
         self.buttons = [NSMutableArray array];
@@ -44,6 +46,18 @@
             [self addSubview:newButton];
         }
         [self _calculateButtonWidths];
+    }
+    return self;
+}
+
+- (instancetype)initWithButtonTitles:(NSArray *)buttonTitles target:(id)target andSelectors:(NSArray *)selectors
+{
+    self = [self initWithButtonTitles:buttonTitles];
+    if (self) {
+        for (int i = 0; i < [_buttons count]; i++) {
+            UIButton *button = [_buttons objectAtIndex:i];
+            [button addTarget:target action:[[selectors objectAtIndex:i] pointerValue] forControlEvents:UIControlEventTouchUpInside];
+        }
     }
     return self;
 }
@@ -150,6 +164,8 @@
     if (self.selectedButtonIndex == newSelectedButtonIndex) {
         return;
     }
+
+    [self.delegate buttonPanelDidSelectButtonWithIndex:newSelectedButtonIndex];
 
     UIButton *oldSelectedButton = (UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex];
     [oldSelectedButton setTitle:[NSString stringWithFormat:@"%d", (self.selectedButtonIndex + 1)] forState:UIControlStateNormal];

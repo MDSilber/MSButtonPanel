@@ -20,7 +20,7 @@
 		B77CE39318B00711000E80C8 /* MSButtonPanel_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE39218B00711000E80C8 /* MSButtonPanel_ExampleTests.m */; };
 		B77CE39E18B00721000E80C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE39D18B00721000E80C8 /* AppDelegate.m */; };
 		B77CE3A118B00726000E80C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE3A018B00726000E80C8 /* ViewController.m */; };
-		B77CE3A418B00733000E80C8 /* MSButtonPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE3A318B00733000E80C8 /* MSButtonPanel.m */; };
+		B77CE3A718B02723000E80C8 /* MSButtonPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B77CE3A618B02723000E80C8 /* MSButtonPanel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		B77CE39D18B00721000E80C8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B77CE39F18B00726000E80C8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B77CE3A018B00726000E80C8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B77CE3A218B00733000E80C8 /* MSButtonPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSButtonPanel.h; sourceTree = "<group>"; };
-		B77CE3A318B00733000E80C8 /* MSButtonPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSButtonPanel.m; sourceTree = "<group>"; };
+		B77CE3A518B02723000E80C8 /* MSButtonPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSButtonPanel.h; path = ../../Classes/MSButtonPanel.h; sourceTree = "<group>"; };
+		B77CE3A618B02723000E80C8 /* MSButtonPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSButtonPanel.m; path = ../../Classes/MSButtonPanel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 			children = (
 				B77CE39C18B00721000E80C8 /* AppDelegate.h */,
 				B77CE39D18B00721000E80C8 /* AppDelegate.m */,
-				B77CE3A218B00733000E80C8 /* MSButtonPanel.h */,
-				B77CE3A318B00733000E80C8 /* MSButtonPanel.m */,
+				B77CE3A518B02723000E80C8 /* MSButtonPanel.h */,
+				B77CE3A618B02723000E80C8 /* MSButtonPanel.m */,
 				B77CE39F18B00726000E80C8 /* ViewController.h */,
 				B77CE3A018B00726000E80C8 /* ViewController.m */,
 				B77CE37F18B00711000E80C8 /* Images.xcassets */,
@@ -251,7 +251,7 @@
 			files = (
 				B77CE3A118B00726000E80C8 /* ViewController.m in Sources */,
 				B77CE39E18B00721000E80C8 /* AppDelegate.m in Sources */,
-				B77CE3A418B00733000E80C8 /* MSButtonPanel.m in Sources */,
+				B77CE3A718B02723000E80C8 /* MSButtonPanel.m in Sources */,
 				B77CE37A18B00711000E80C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +453,7 @@
 				B77CE39818B00711000E80C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B77CE39918B00711000E80C8 /* Build configuration list for PBXNativeTarget "MSButtonPanel-ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +462,7 @@
 				B77CE39B18B00711000E80C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
