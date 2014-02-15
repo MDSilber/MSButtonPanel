@@ -76,6 +76,8 @@
     }
 }
 
+#pragma mark - Setter methods
+
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor
 {
     if (_selectedBackgroundColor != selectedBackgroundColor) {
@@ -135,6 +137,8 @@
         }
     }
 }
+
+#pragma mark - Private methods
 
 - (UIButton *)_buttonWithIndex:(NSInteger)index isSelected:(BOOL)selected
 {
