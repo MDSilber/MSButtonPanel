@@ -26,3 +26,5 @@ Target/selector method:
 Note that selectors passed through an array must be passed as NSValues.
 
 An example of each of these can be found in the example project attached. If you have any questions, feel free to email me at mdsilber1@gmail.com. Good luck!
+
+TODO: Support multiple orientations (with autolayout?)
