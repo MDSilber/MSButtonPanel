@@ -13,6 +13,7 @@
 #define DEFAULT_FONT_SIZE 14.0f
 #define BUTTON_CORNER_RADIUS 3.0f
 #define ANIMATION_DURATION 0.25f
+#define DEFAULT_PANEL_HEIGHT 50.0f
 
 @interface MSButtonPanel ()
 @property (nonatomic) CGFloat normalButtonWidth;
@@ -74,9 +75,13 @@
         }
         [self addSubview:button];
     }
+
+    if (CGRectEqualToRect(self.frame, CGRectZero)) {
+        self.frame = CGRectMake(0, 0, self.superview.frame.size.width, DEFAULT_PANEL_HEIGHT);
+    }
 }
 
-#pragma mark - Setter methods
+#pragma mark - Setter methods (selected properties)
 
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor
 {
@@ -93,6 +98,16 @@
         [((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]) setTitleColor:_selectedTextColor forState:UIControlStateNormal];
     }
 }
+
+- (void)setSelectedFont:(UIFont *)selectedFont
+{
+    if (_selectedFont != selectedFont) {
+        _selectedFont = selectedFont;
+        ((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]).titleLabel.font = _selectedFont;
+    }
+}
+
+#pragma mark - Setter methods (unselected properties) 
 
 - (void)setUnselectedBackgroundColor:(UIColor *)unselectedBackgroundColor
 {
@@ -115,14 +130,6 @@
                 [button setTitleColor:_unselectedTextColor forState:UIControlStateNormal];
             }
         }
-    }
-}
-
-- (void)setSelectedFont:(UIFont *)selectedFont
-{
-    if (_selectedFont != selectedFont) {
-        _selectedFont = selectedFont;
-        ((UIButton *)[self.buttons objectAtIndex:self.selectedButtonIndex]).titleLabel.font = _selectedFont;
     }
 }
 
