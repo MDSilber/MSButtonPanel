@@ -27,7 +27,7 @@
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles
 {
     NSAssert([buttonTitles count] > 1, @"Need more than one button title");
-    NSAssert([buttonTitles count] < 11, @"Too many buttons will break the panel");
+    NSAssert([buttonTitles count] < 11, @"Too many buttons will break the effect of the panel. Please keep it between two and ten buttons.");
     self = [super initWithFrame:CGRectZero];
     if (self) {
         self.buttons = [NSMutableArray array];
