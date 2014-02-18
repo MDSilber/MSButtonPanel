@@ -41,6 +41,7 @@
         _selectedFont = [UIFont fontWithName:@"HelveticaNeue" size:DEFAULT_FONT_SIZE];
         _unselectedFont = [UIFont fontWithName:@"HelveticaNeue" size:DEFAULT_FONT_SIZE];
         for (int i = 0; i < [buttonTitles count]; i++) {
+            NSAssert([[buttonTitles objectAtIndex:i] isKindOfClass:[NSString class]], @"Button titles must be passed in as strings");
             UIButton *newButton = [self _buttonWithIndex:i isSelected:(i == self.selectedButtonIndex)];
             [self addSubview:newButton];
         }
@@ -51,9 +52,11 @@
 
 - (instancetype)initWithButtonTitles:(NSArray *)buttonTitles target:(id)target andSelectors:(NSArray *)selectors
 {
+    NSAssert([buttonTitles count] == [selectors count], @"Must have the same number of selectors as buttons");
     self = [self initWithButtonTitles:buttonTitles];
     if (self) {
         for (int i = 0; i < [_buttons count]; i++) {
+            NSAssert([[selectors objectAtIndex:i] isKindOfClass:[NSValue class]], @"Selectors must be passed as NSValue objects");
             UIButton *button = [_buttons objectAtIndex:i];
             [button addTarget:target action:[[selectors objectAtIndex:i] pointerValue] forControlEvents:UIControlEventTouchUpInside];
         }
